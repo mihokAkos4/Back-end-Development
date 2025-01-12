@@ -1,0 +1,28 @@
+SUPERUSER:
+
+Username: admin
+Password: admin@789!
+
+
+MANAGERS:
+
+Username: Adrian
+Password: lemon@adr!
+
+Username: Mario
+Password: lemon@mar!
+
+Username: Sana
+Password: lemon@san!
+
+
+DELIVERY CREW:
+
+Username: Josh
+Password: lemon@josh!
+
+
+CUSTOMER:
+
+Username: Jane
+Password: lemon@jane!

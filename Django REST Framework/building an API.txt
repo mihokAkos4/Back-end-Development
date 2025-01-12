@@ -1,0 +1,77 @@
+#API returns JSON or XML response
+#DRF -> JSON
+
+#1. pip3 install djangorestframework
+#2. settings.py  --> INSTALLED APPS ['rest_framework',]
+
+#3.  models.py
+
+from django.db import models
+
+class menu(models.Model):
+    item = models.CharField(max_length=100)
+    price = models.IntegerField()
+    
+class booking(models.Model):
+    tableno = models.IntegerField()
+    persons = models.IntegerField()
+
+#4.  serilaizers.py 
+
+from rest_framework import serializers
+from .models import menu
+
+class menuSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = menu
+        fields = ['username',]
+ 
+class bookingSerializer(serializers.ModelSerializer):
+    class Meta:
+    model = booking 
+    fields = '__all__'
+    
+ #5.  views.py 
+ 
+ from rest_framework.views import APIView
+ from rest_framework.response import Response
+ from .models import booking
+ from .serializers import bookingSerializer
+ 
+ class bookingview(APIView):
+    
+    def get(self,request):                  #GET request
+        items = booking.objects.all()
+        serializer = bookingSerializer(itmes, many=True)
+        return Response(serializer.data)    #Return JSON
+    
+    def post(self, request):                #POST request
+        serializer = menuSerializer(data=request.data)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"status":"success", "data": serializer.data})
+  
+#  urls.py
+
+from django.urls import path
+from .views import menuview, bookingview
+
+urlpatterns = [
+    
+    path('menu/', menuview.as_view()),
+    path('booking/', bookingview.as_view()),
+    
+    ]
+
+#   urls.py (project)
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    
+    path('admin/', admin.site.urls),
+    path('api/', include ('restaurant.urls')),
+    
+    ]
+    

@@ -1,0 +1,43 @@
+1.Open folder "API_project" in VS Code.
+
+
+2.Run the following commands:
+
+ cd .\env\Scripts\ 
+
+ .\activate
+
+ cd..                           (once)
+
+ cd..                           (twice)
+
+ python manage.py runserver
+
+
+3.Server will start on local ip-address with additional port.
+
+
+4.In your browser type : http://yourlocalip:port/admin
+                        (eg:http://127.0.0.1:8000/admin)
+
+
+5.Log in with the credentials provided in the "accounts.txt" file to browse the administration website.
+
+
+6.To edit the menu items/carts/tokens/groups/users LogIn with a superuser account.
+
+
+6.Visit API URL-endpoints.
+
+http://127.0.0.1:8000/api/menu-items
+http://127.0.0.1:8000/api/menu-items/category/
+http://127.0.0.1:8000/api/menu-items/category/1
+http://127.0.0.1:8000/api/groups/managers/users/
+http://127.0.0.1:8000/api/groups/managers/users/<int:pk>
+http://127.0.0.1:8000/api/groups/delivery-crew/users
+http://127.0.0.1:8000/api/groups/delivery-crew/users/
+http://127.0.0.1:8000/api/cart/menu-items
+http://127.0.0.1:8000/api/orders
+http://127.0.0.1:8000/api/orders/1
+
+(use your own development server ip/port)
