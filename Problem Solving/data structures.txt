@@ -1,0 +1,54 @@
+immutable: does not change after creation
+
+
+mutable: faciliates operations to be perfomerd on contents
+		 updates
+		 
+		 
+linear: arrays queues stacks lists 
+		each element is attached which precieves it
+		
+len(array) = array.length
+
+#list = string , integer, float
+
+list=[1,2,3,4,5]
+
+print(list) -->  [5,4,3,2,1]
+list.sort()  
+print(list) -->	[1,2,3,4,5]
+
+array based , order based
+
+array list : no unused space
+
+linked list:
+data -> pointer to the next list item
+head (start) - tail(end)
+
+#set = only holds unique elements
+-no order
+-delete add new item
+-hasing :mapping 
+	-searching o(1)
+	
+	key_1 ---- Hash Function ---- Index1-Value1
+	
+-for 
+	o(n)
+	
+#stack = sequential acces
+top					push - add item to top
+					pop - remove item from top
+First in Last Out	isEmpty - checks if empty
+First out Last in	isFull - checks if full
+ctrl+z
+
+ctrl+y redo readd to the stack
+
+
+#queue = least recently added item, first to join the queue
+		 mc'donalds order queue
+		 1st order 1st servint to 1st order
+
+First in First out

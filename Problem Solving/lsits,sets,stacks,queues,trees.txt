@@ -1,0 +1,78 @@
+immutable: does not change after creation
+
+
+mutable: faciliates operations to be perfomerd on contents
+		 updates
+		 
+		 
+linear: arrays queues stacks lists 
+		each element is attached which precieves it
+		
+len(array) = array.length
+
+Stack<T>: is an example of Generics. Generics allow you 
+to define a class, 
+method, or data structure with a placeholder type 
+that can be replaced with a specific type when
+the class or method is instantiated or called.
+
+#list = string , integer, float
+
+list=[1,2,3,4,5]
+
+print(list) -->  [5,4,3,2,1]
+list.sort()  
+print(list) -->	[1,2,3,4,5]
+
+array based , order based
+
+array list : no unused space
+
+linked list:
+data -> pointer to the next list item
+head (start) - tail(end)
+
+#set = only holds unique elements
+-no order
+-delete add new item
+-hasing :mapping 
+	-searching o(1)
+	
+	key_1 ---- Hash Function ---- Index1-Value1
+	
+-for 
+	o(n)
+	
+#stack = sequential acces
+top					push - add item to top
+FILO = LIFO					pop - remove item from top
+First in Last Out	isEmpty - checks if empty
+Last in First out	isFull - checks if full
+ctrl+z
+
+ctrl+y redo readd to the stack
+
+
+#queue = least recently added item, first to join the queue
+		 mc'donalds order queue
+		 1st order 1st servint to 1st order
+
+
+#trees = nodes - parent node - child node-siblings - leaf node 
+				(csomopontok - gyoker - somszed - level)
+
+branch - connection between two nodes
+path - conenction (ut)
+height - topmost-deepest nodes
+size - total number of nodes 
+
+-hierachy
+left node smaller value
+right node greater value
+depth first from top to bottom left				
+
+FILO=LIFO
+1 2 3 4 
+1
+1 2 3 4 
+1 

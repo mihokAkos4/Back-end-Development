@@ -1,0 +1,43 @@
+hash table 
+key-value
+-compress 
+-last 4 digits of and id number
+-MD5 SHA CRC32
+speed>space
+index for a value
+(pk)
+10 keys 0to9 where in memory to store these numbers ?
+ apply modulus key:0 #2%20  = 0
+			   key:1 #1%20  = 1
+				...
+			   key:9 #9%20  = 9
+			   9 unique values
+			   
+collision #20%21 = 1
+check if there are same values
+	-grow table, increase complexity
+	or -create linked list - point collision store that addition collision value
+	store linked lsit of values
+	
+#heap = tree but queue
+min heap max heap
+identify item, return in shortest time possible
+->queue up next item
+
+min heap: propagation
+The order of importance is determined by where in 
+the data structure
+the information is found
+
+#graph = tree without hierarchy
+-weighted
+-directed/undirected 
+			-no precendence	
+one way :weakly connected
+two way : strongly connected
+in depth : same level every node 
+depth first: end of every bracnh before next one  
+	-stack
+	
+breadth first
+-traveling man 

@@ -1,0 +1,78 @@
+
+
+#Divide and Conquer
+Divide: smaller seggments 
+Conquer: solve each small segment
+-->combine
+
+eg:
+merge sort 
+halving till 1 element left and regroup (awesome)
+ 
+ -shopping list
+ 
+ "A problem shared isa problem halved."
+ 
+ 
+ #Paralelization :
+ -computers working on the same problem at the same time
+ 
+ #Memory-management:
+ -chunks 
+ 
+ 
+ #Recursion 
+ -recalling
+ -loops
+ 
+ potential permutations of a binary number:
+ 
+ exponent (x, n)
+	If n == 0;
+		return 1 ;
+	Else 
+		return (x* exponent(x, n-1))	
+		
+def fibonacci(number)
+	 If number < 2
+		number
+	 Else 
+		fibonacci(number - 1) + fibonacci(number - 2)
+	end
+end
+		
+
+1 compute problem - 1 search for answer
+
+When computing dynamic programming solutions,
+one must first determine the objective function.
+That is the description of what
+the optimum outcome is to be. 
+
+Breaking the problem into smaller steps
+can allow recursions to take place.
+
+#Memoization: lookup for last time question was asked
+
+call calculation <---> previuos calculation stored
+
+
+#Dynamic-Programing: Divide and Conquer, Recursion
+-combination, optimalization problems
+
+Knapsack problem:
+	-weight capacity
+		-for computations
+		
+#Greedy-algorithm
+	-most rewarding option is choosen
+	-travels to lowest value
+	-not always the best option is returned
+
+ex:
+put them most valuable thing in the backpack
+shortest running program
+	-memoization 
+
+
+		

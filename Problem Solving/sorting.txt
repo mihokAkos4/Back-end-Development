@@ -1,0 +1,52 @@
+!efficiency!
+#sorting algorithms
+first element : smallest 
+second element: compared switched to the 
+second smallest element
+
+9, 2, 4, 8, 7, 90
+
+2 9 4 8 7 90
+2 4 9 8 7 90	#3swaps
+2 4 7 8 9 90 
+
+#insertion sort #efficeint!
+!
+35 46 36 9 15 6 3
+46>35 no change
+36<46 change
+35 36 46 9 15 6 3
+46>36 no change
+9<46 change
+35 36 9 46 15 6 3
+
+BUT 9<36<35
+
+9 35 36 46 15 6 3
+...
+3 6 9 15 35 36 46
+!
+#selection pivot 
+35 46 36 9 15 6 3
+-pivot point:9
+itemns < 9: 6 3 (left)
+items > 9: 35 46 36 15(right)
+
+
+-safguards!
+
+#linear-search :searches through the array
+			 till found
+			 
+#binary-search : halfway point
+			 sort in ascending
+			 if element >< by teh target element
+			 if < search in left, right half
+			 ...
+
+n/2^k times halfed / o(log(n))
+
+
+
+
+			 

@@ -1,0 +1,10 @@
+O(1)#print
+O(log(n))#more than 1 compution
+O(n)#more than 1 compution eg while
+O(n^2)#loop 2 times
+O(n^3)#loop 3 times
+
+#auxiliary space : temporary space needed
+#input
+
+1 java variable = 4 byte
