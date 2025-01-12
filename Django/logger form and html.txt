@@ -1,0 +1,70 @@
+basic HTML form SUBMIT a NAME
+
+<form action="\order" method="post">        #2.ACTION is triggered to make a POST request
+	<label for="your_name">Your name: </label>
+	<input id="your_name" type="text" name="your_name" value="{{current_name))">
+	
+	<input type="submit" value"Send name">  #1.when button pressed
+</form>
+
+
+#Django
+#-form class
+
+from django import forms
+
+class NameForm(forms.Form):
+	your_name = forms.CharField(label='Your name', max_length=100)
+    
+--->Rendered HTML code
+
+<label for="your_name">Your name: </label>
+<input id="your_name" type="text" name="your_name" max_length="100" required>
+
+#easier to manage
+#names handled by form class
+
+Creating a ModelForm
+#Logging form for employees to log their work ours
+
+#forms.py
+from django.db import models
+
+class Logger(models.Model):
+    first_name = models.CharField(max_length = 200)
+    last_name = models.CharField(max_length = 200)
+    time_log = models.TimeField(help_text="Enter the exact time!")
+    
+#models.py
+from django import forms
+from .models import Logger
+
+class LogForm(forms.ModelForm):
+    class Meta:         
+    model = Logger
+    fields = '__all__'
+    
+#data exchange via form = sending data BACK as a RESPONSE
+#implementation about the POST method --> views.py
+#views.py
+from django.shortcuts import render
+from myapp.forms import LogForm
+
+def form_view(request):
+    form = LogForm()        
+    if request.method == 'POST':       
+        form = LogForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = LogForm() #clear the form after saving
+    else:
+        form = LogForm()
+    context = {"form" : form}
+    return render(request, "home.html", context)
+    
+#urls.py
+
+urlpatterns = [
+        path('',form_view, name="form_view"),
+        ]
+        

@@ -1,0 +1,3 @@
+Create your token with the following credentials 
+Username: admin
+Password: admin@789!

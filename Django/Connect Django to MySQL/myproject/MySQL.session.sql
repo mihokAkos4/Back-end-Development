@@ -1,0 +1,1 @@
+CREATE DATABASE menu_db;

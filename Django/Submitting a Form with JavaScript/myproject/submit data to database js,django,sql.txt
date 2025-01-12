@@ -1,0 +1,97 @@
+#1.configure urls
+#2. updated database settings
+
+#models.py
+from django.db import models
+
+#create UserComment model
+class UserComments(models.Model):
+    first_name = models.CharField(max_length = 200)
+    last_name = models.CharField(max_length = 200)
+    comment = models.CharField(max_length = 200)
+  
+  
+#forms.py
+from django import forms
+from .models import UserComments
+
+#create CommentForm from UserComments model
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = UserComments
+        fields = '__all__'
+        
+#views.py
+from django.shortcuts import render
+from myapp.forms import CommentForm
+from .models import UserComments
+from django.http import JsonResponse
+
+#to render and process form data and send it to model
+def form_view(request):
+    form = CommentForm() #create form object
+    
+    if request.method == 'POST':        #if request = post update contents
+        form = CommentForm(request.POST)
+        if form.is_valid():             #if form data is valid
+            cd = form.cleaned_data      #normalize data
+            uc = UserComments(  
+                first_name = cd['first_name']
+                last_name = cd['last_name']         #content recieved from the POST method
+                comment = cd['comment']
+                )
+            uc.save() #update the model  data 
+    return render(request, 'blog.html',{'form':form})   #      reuturn the render 
+    
+ # create template 'blog.html' in APP templates folder
+ # make sure title and heading are updated
+ # add the form passed using render function inside the template
+ <body class="bg-light'>
+ <div class = 'container pt-4'>
+    <h1>User Comments</h1>
+    <form method ="Post" id="form">
+    {% csrf_token %}
+    
+    {{ form.as_p }} # the form 
+    
+        <button type="submit" class"btn btn-primary">Submit</button>
+    </form>
+ </div>
+        #create html script tag,add JavaScript functionality
+<scirpt>
+    const form = document.getElementById('form');  #acces form element from html code
+    form.addEventListener("submit", submitHandler); #submitHandler
+    
+    function submitHandler(e){
+           e.preventDefault(); 
+           
+           fetch(form.action,{method}:'POST', bodey: new FormData{{form}})
+           .then(response=>response.json())
+           .then(data=>{
+                if(data.message === 'succces'){
+                    alert('Succes!');
+                    form.reset()
+                    }
+            })
+    }
+</scirpt>
+</bodey>
+</html>
+
+#view.py
+from django.http import JsonResponse
+"if form.is_valid():             #if form data is valid
+            cd = form.cleaned_data      #normalize data
+            uc = UserComments(  
+                first_name = cd['first_name']
+                last_name = cd['last_name']         #content recieved from the POST method
+                comment = cd['comment']
+                )
+            uc.save()"
+            return JsonResponse({
+                'message:'success'
+                })
+            
+#save
+#makemigrations
+#migrate

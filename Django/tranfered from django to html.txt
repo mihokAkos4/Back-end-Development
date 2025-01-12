@@ -1,0 +1,3 @@
+Django				Html
+
+forms.CharField = <input type="text">
